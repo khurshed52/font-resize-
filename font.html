@@ -1,0 +1,76 @@
+<html>  
+<head>  
+<style>  
+
+body {  
+    font-size: 13px;  
+    padding: 10px;  
+}  
+</style>  
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script> 
+<script type="text/javascript">  
+        $(document).ready(function () {  
+            $('#linkIncrease').click(function () {  
+                modifyFontSize('increase');  
+            });  
+  
+            $('#linkDecrease').click(function () {  
+                modifyFontSize('decrease');  
+            });  
+  
+            $('#linkReset').click(function () {  
+                modifyFontSize('reset');  
+            });
+
+
+window.ClickIncreaseCounter = 0;
+window.ClickDecreaseCounter = 0;
+var clickCounter = 3;
+
+function modifyFontSize(flag) {  
+                var divElement = $('body');  
+                var currentFontSize = parseInt(divElement.css('font-size'));  
+  
+               if (flag === 'increase') {
+        currentFontSize += 1;
+        if (window.ClickIncreaseCounter < clickCounter) {
+            divElement.css('font-size', currentFontSize);
+            window.ClickIncreaseCounter++;
+        }
+    }
+    else if (flag === 'decrease') {
+        currentFontSize -= 3;
+        if (window.ClickDecreaseCounter < clickCounter) {
+            divElement.css('font-size', currentFontSize);
+            window.ClickDecreaseCounter++;
+        }
+    }
+    else {
+        currentFontSize = 13;
+        divElement.css('font-size', currentFontSize);
+        window.ClickIncreaseCounter = 0;
+        window.ClickDecreaseCounter = 0;
+    }
+
+}
+
+
+        });  
+    </script>  
+</head>  
+  
+<body style="font-family:Arial">  
+Font-Size:   
+<a id="linkIncrease" href="#"><b>+</b></a>  
+ 
+<a id="linkDecrease" href="#"><b>-</b></a>   
+
+<a id="linkReset" href="#">   <b>X</b></a>   
+
+<br />  
+<br />  
+<div> jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery is the most popular JavaScript library in use today. jQuery is free,  open-source software licensed under the MIT License. jQuery's syntax is designed to make it easier to navigate a document, select DOM elements, create animations, handle events, and develop Ajax applications. jQuery also provides   capabilities for developers to create plug-ins on top of the JavaScript library. This enables developers to create abstractions for low-level interaction and animation, advanced   effects and high-level, theme-able widgets. The modular approach to the jQuery library allows the creation of powerful dynamic web pages and web applications. </div>  
+</body>  
+</html>
