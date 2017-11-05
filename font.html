@@ -13,15 +13,18 @@ body {
 <script type="text/javascript">  
         $(document).ready(function () {  
             $('#linkIncrease').click(function () {  
-                modifyFontSize('increase');  
+                modifyFontSize('increase');
+                return false;
             });  
   
             $('#linkDecrease').click(function () {  
-                modifyFontSize('decrease');  
+                modifyFontSize('decrease');
+                return false;
             });  
   
             $('#linkReset').click(function () {  
-                modifyFontSize('reset');  
+                modifyFontSize('reset');
+                return false;
             });
 
 
